@@ -2,10 +2,10 @@ let contentEL = document.getElementById("content");
 
 let ellArr = document.getElementsByClassName("optionButton");
 for (let i = 0; i < ellArr.length; i++) {
-    ellArr[i].onclick = changeText(e, ellArr.name)
+    ellArr[i].onclick = function (e){changeText(e, ellArr[i].name)}
 }
 
-function changeText(input){
+function changeText(e, input){
     console.log(input)
     switch (input) {
         case "Ønskelister":
@@ -15,5 +15,5 @@ function changeText(input){
             contentEL.innerHTML = "<h2>Get your own support</h2>"
             break;
     }
-
+    e.preventDefault();
 }
